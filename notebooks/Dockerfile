@@ -1,6 +1,6 @@
 # ==============================================================================================================================================================================================================================================
-# Build: docker build -t lt2330 .
-# Run: docker run -d -p 8888:8888 --name lt2330 lt2330
+# Build: docker build -t andrewtait/lt2330 .
+# Run: docker run -d -p 80:8888 --name lt2330 --restart unless-stopped andrewtait/lt2330
 # ==============================================================================================================================================================================================================================================
 
 FROM rust
@@ -37,4 +37,4 @@ COPY course /data/course/
 RUN mkdir /data/exercises
 COPY exercises /data/exercises
 
-ENTRYPOINT ["jupyter", "lab", "--ip=0.0.0.0", "--allow-root", "--NotebookApp.password='sha1:2938ab7381e2:2a9204a79cbcfd2924f77a04c0c890f690414de8'"]
+ENTRYPOINT ["jupyter", "lab", "--ip=0.0.0.0", "--allow-root", "--NotebookApp.password='sha1:45de6457d836:0bc06809ba1eed4e1d52748ded3bed1ac877e414'"]
